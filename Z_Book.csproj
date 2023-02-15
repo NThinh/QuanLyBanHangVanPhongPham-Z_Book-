@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0760BD2-F2A2-4431-8072-CB015D61CE75}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Z_Book</RootNamespace>
+    <AssemblyName>Z_Book</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.3.5, Culture=neutral, PublicKeyToken=4015e4865bda28a4, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.3.5\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDialog.Designer.cs">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDialogChooseStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDialogChooseStore.Designer.cs">
+      <DependentUpon>frmDialogChooseStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDialogCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDialogCustomer.Designer.cs">
+      <DependentUpon>frmDialogCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoggin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoggin.Designer.cs">
+      <DependentUpon>frmLoggin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPos.Designer.cs">
+      <DependentUpon>frmPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQlBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQlBanHang.Designer.cs">
+      <DependentUpon>frmQlBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQlBaoCao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQlBaoCao.Designer.cs">
+      <DependentUpon>frmQlBaoCao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQlHeThong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQlHeThong.Designer.cs">
+      <DependentUpon>frmQlHeThong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQlKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQlKhoHang.Designer.cs">
+      <DependentUpon>frmQlKhoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQlThuChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQlThuChi.Designer.cs">
+      <DependentUpon>frmQlThuChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\clsBaoCao.cs" />
+    <Compile Include="Model\clsCashBook.cs" />
+    <Compile Include="Model\clsCommon.cs" />
+    <Compile Include="Model\clsCustomer.cs" />
+    <Compile Include="Model\clsData.cs" />
+    <Compile Include="Model\clsEmploys.cs" />
+    <Compile Include="Model\clsInventory.cs" />
+    <Compile Include="Model\clsKhuyenMai.cs" />
+    <Compile Include="Model\clsMoveWarehouse.cs" />
+    <Compile Include="Model\clsOrder.cs" />
+    <Compile Include="Model\clsPhieuChi.cs" />
+    <Compile Include="Model\clsProduct.cs" />
+    <Compile Include="Model\clsSupplier.cs" />
+    <Compile Include="Model\cls_Import.cs" />
+    <Compile Include="Model\cls_objectPC.cs" />
+    <Compile Include="Model\cls_objectPN.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ucHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucHome.Designer.cs">
+      <DependentUpon>ucHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ucWidget.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ucWidget.Designer.cs">
+      <DependentUpon>ucWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_Add_Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_Add_Customer.Designer.cs">
+      <DependentUpon>uc_Add_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_congno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_congno.Designer.cs">
+      <DependentUpon>uc_congno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_Customer.Designer.cs">
+      <DependentUpon>uc_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_Import_add_detail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_Import_add_detail.Designer.cs">
+      <DependentUpon>uc_Import_add_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_Import_Categort_Detail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_Import_Categort_Detail.Designer.cs">
+      <DependentUpon>uc_Import_Categort_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_Import_Category.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_Import_Category.Designer.cs">
+      <DependentUpon>uc_Import_Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_inventory.Designer.cs">
+      <DependentUpon>uc_inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_inventory_detail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_inventory_detail.Designer.cs">
+      <DependentUpon>uc_inventory_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_khuyenmai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_khuyenmai.Designer.cs">
+      <DependentUpon>uc_khuyenmai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_nhacungcap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_nhacungcap.Designer.cs">
+      <DependentUpon>uc_nhacungcap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_nhanvien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_nhanvien.Designer.cs">
+      <DependentUpon>uc_nhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_Order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_Order.Designer.cs">
+      <DependentUpon>uc_Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_Order_detail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_Order_detail.Designer.cs">
+      <DependentUpon>uc_Order_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_phieuchi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_phieuchi.Designer.cs">
+      <DependentUpon>uc_phieuchi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_phieuchi_add_ct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_phieuchi_add_ct.Designer.cs">
+      <DependentUpon>uc_phieuchi_add_ct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_phieuchi_chitiet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_phieuchi_chitiet.Designer.cs">
+      <DependentUpon>uc_phieuchi_chitiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_Product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_Product.Designer.cs">
+      <DependentUpon>uc_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_product_detail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_product_detail.Designer.cs">
+      <DependentUpon>uc_product_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_shipping_add_product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_shipping_add_product.Designer.cs">
+      <DependentUpon>uc_shipping_add_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_shipping_product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_shipping_product.Designer.cs">
+      <DependentUpon>uc_shipping_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_soquy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_soquy.Designer.cs">
+      <DependentUpon>uc_soquy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_thietlap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_thietlap.Designer.cs">
+      <DependentUpon>uc_thietlap.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDialog.resx">
+      <DependentUpon>frmDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDialogChooseStore.resx">
+      <DependentUpon>frmDialogChooseStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDialogCustomer.resx">
+      <DependentUpon>frmDialogCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoggin.resx">
+      <DependentUpon>frmLoggin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPos.resx">
+      <DependentUpon>frmPos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQlBanHang.resx">
+      <DependentUpon>frmQlBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQlBaoCao.resx">
+      <DependentUpon>frmQlBaoCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQlHeThong.resx">
+      <DependentUpon>frmQlHeThong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQlKhoHang.resx">
+      <DependentUpon>frmQlKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQlThuChi.resx">
+      <DependentUpon>frmQlThuChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UserControls\ucHome.resx">
+      <DependentUpon>ucHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ucWidget.resx">
+      <DependentUpon>ucWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_Add_Customer.resx">
+      <DependentUpon>uc_Add_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_congno.resx">
+      <DependentUpon>uc_congno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_Customer.resx">
+      <DependentUpon>uc_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_Import_add_detail.resx">
+      <DependentUpon>uc_Import_add_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_Import_Categort_Detail.resx">
+      <DependentUpon>uc_Import_Categort_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_Import_Category.resx">
+      <DependentUpon>uc_Import_Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_inventory.resx">
+      <DependentUpon>uc_inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_inventory_detail.resx">
+      <DependentUpon>uc_inventory_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_khuyenmai.resx">
+      <DependentUpon>uc_khuyenmai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_nhacungcap.resx">
+      <DependentUpon>uc_nhacungcap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_nhanvien.resx">
+      <DependentUpon>uc_nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_Order.resx">
+      <DependentUpon>uc_Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_Order_detail.resx">
+      <DependentUpon>uc_Order_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_phieuchi.resx">
+      <DependentUpon>uc_phieuchi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_phieuchi_add_ct.resx">
+      <DependentUpon>uc_phieuchi_add_ct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_phieuchi_chitiet.resx">
+      <DependentUpon>uc_phieuchi_chitiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_Product.resx">
+      <DependentUpon>uc_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_product_detail.resx">
+      <DependentUpon>uc_product_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_shipping_add_product.resx">
+      <DependentUpon>uc_shipping_add_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_shipping_product.resx">
+      <DependentUpon>uc_shipping_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_soquy.resx">
+      <DependentUpon>uc_soquy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_thietlap.resx">
+      <DependentUpon>uc_thietlap.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Double_Left_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_multiply_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_minus_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_depot_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shop_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_customs_clearance_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_installing_updates_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_account_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_barcode_reader_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_unverified_account_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_lock_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_open_pane_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Double_Left_25px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_double_right_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Z - Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shopify_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_purchase_order_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_customer_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aaaaaaa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_phone_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_bookstore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_bookstore %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_lock_25px_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_lock_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_account_30px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_password_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_full_image_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_menu_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_menu_25px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_books_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_drawing_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_love_book_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hahary.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_math_book_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\kh2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\kh3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\kh4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\kh_1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\nt_1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\nt_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\nt_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\sgk8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\sgk_ds10.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\sgk_ta8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\sgk_ta9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\vpp_1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\vpp_2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\vpp_3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\vpp_4.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\vpp_5.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_download_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pos_terminal_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_valet_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_user_group_man_woman_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_sale_24px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Add_Male_User_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Gift_24px.png" />
+    <None Include="Resources\icons8_save_36px.png" />
+    <None Include="Resources\icons8_minus_36px.png" />
+    <None Include="Resources\icons8_restart_36px.png" />
+    <None Include="Resources\icons8_edit_property_24px1.png" />
+    <None Include="Resources\icons8_trash_can_24px.png" />
+    <None Include="Resources\icons8_edit_24px.png" />
+    <None Include="Resources\icons8_edit_property_24px.png" />
+    <None Include="Resources\icons8_Tools_24px.png" />
+    <None Include="Resources\icons8_delete_24px.png" />
+    <None Include="Resources\icons8_view_production_order_detail_24px.png" />
+    <None Include="Resources\imgVuong.png" />
+    <None Include="Resources\icons8_group_24px1.png" />
+    <None Include="Resources\icons8_group_24px.png" />
+    <None Include="Resources\icons8_phone_24px.png" />
+    <None Include="Resources\icons8_checked_user_male_24px.png" />
+    <None Include="Resources\icons8_address_24px.png" />
+    <None Include="Resources\icons8_add_36px.png" />
+    <None Include="Resources\icons8_close_36px.png" />
+    <None Include="Resources\icons8_camera_36px.png" />
+    <None Include="Resources\bg1.jpg" />
+    <None Include="Resources\ctd_0.jpg" />
+    <None Include="Resources\icons8_checked_checkbox_36px.png" />
+    <None Include="Resources\icons8_cloud_sync_36px.png" />
+    <Content Include="Resources\icons8_database_administrator_12px.png" />
+    <None Include="Resources\icons8_database_administrator_12px1.png" />
+    <None Include="Resources\icons8_delete_database_12px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
