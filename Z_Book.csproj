@@ -408,6 +408,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="Resources\icons8_Double_Left_25px.png" />
   </ItemGroup>
   <ItemGroup>
